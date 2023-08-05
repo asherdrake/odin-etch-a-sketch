@@ -11,18 +11,15 @@ button.addEventListener('click', function(e) {
 });
 
 function genGrid(gridSize) {
-    for (let i = 0; i < gridSize; i++) {
-        const newRow = document.createElement('div');
-        for (let j = 0; j < gridSize; j++) {
-            const newDiv = document.createElement('div');
-            newDiv.classList.add('box');
-            newDiv.addEventListener('mouseover', function(e) {
-                newDiv.classList.add('hover');
-            });
-            newRow.appendChild(newDiv);
-        }
-        newRow.classList.add('row');
-        container.appendChild(newRow);
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const newBox = document.createElement('div');
+        newBox.classList.add('box');
+        container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+        newBox.addEventListener('mouseover', function(e) {
+            newBox.classList.add('hover');
+        });
+        container.appendChild(newBox);
     }
 }
 
