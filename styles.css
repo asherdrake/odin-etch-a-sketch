@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    border: 1px orange solid;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px red solid;
+    width: 670px;
+    height: 670px;
+}
+
+.row {
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: center;
+    border: solid 1px yellow;
+    overflow-y: auto;
+    align-items: center;
+}
+
+.box {
+    flex-shrink: 1; 
+    flex-grow: 1;
+    align-self: stretch;
+    border: solid 1px green;
+    width: 40px;
+    height: 40px;
+}
+
+.hover {
+    background-color: black;
+}
